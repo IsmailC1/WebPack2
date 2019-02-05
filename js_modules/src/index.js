@@ -1,5 +1,9 @@
-import sum from './sum';
-import './image_viewer';
+const button = document.createElement('button');
+button.innerText = 'Click Me';
+button.onclick = () => { 
+   System.import('./image_viewer').then(module => {
+       module.default();
+   })
+};
 
-const toplam = sum(3, 5);
-console.log(toplam);
+document.body.appendChild(button);
